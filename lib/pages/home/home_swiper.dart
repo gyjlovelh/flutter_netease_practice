@@ -33,7 +33,7 @@ class _HomeSwiperState extends State<HomeSwiper> {
                       image: NetworkImage("${item['pic']}"),
                       fit: BoxFit.cover
                     ),
-                    borderRadius: BorderRadius.circular(8.0)
+                    borderRadius: BorderRadius.circular(12.0)
                   ),
                 );
               },

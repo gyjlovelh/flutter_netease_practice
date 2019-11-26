@@ -25,10 +25,11 @@ class _HomeSongState extends State<HomeSong> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Song List",
+                  "新歌速递",
                   style: TextStyle(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.bold
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'monospace'
                   ),
                 ),
                 FlatButton(
@@ -50,9 +51,20 @@ class _HomeSongState extends State<HomeSong> {
                       color: Colors.transparent,
                       child: ListTile(
                         onTap: () {},
-                        leading: ClipRRect(
-                          borderRadius: BorderRadius.circular(8.0),
-                          child: Image.network('${item['song']['album']['picUrl']}'),
+                        leading: Container(
+                          decoration: BoxDecoration(
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black45,
+                                blurRadius: 8.0,
+                                offset: Offset(1.0, 1.0)
+                              )
+                            ]
+                          ),
+                          child:  ClipRRect(
+                            borderRadius: BorderRadius.circular(8.0),
+                            child: Image.network('${item['song']['album']['picUrl']}'),
+                          ),
                         ),
                         title: Text(
                           '${item['name']}',
@@ -61,7 +73,10 @@ class _HomeSongState extends State<HomeSong> {
                           ),
                         ),
                         subtitle: Text('data'),
-                        trailing: Icon(Icons.view_list),
+                        trailing: Icon(IconData(
+                          0xe62b,
+                          fontFamily: 'iconfont'
+                        )),
                         dense: true,
                       ),
                     );

@@ -46,3 +46,12 @@ flutter:
     - family: iconfont
       fonts:
         - asset: assets/iconfont/iconfont.ttf
+
+    - family: consolas
+      fonts:
+        - asset: assets/fonts/Consolas.ttf
+
+    - family: monospace
+      fonts:
+        - asset: assets/fonts/monospace.ttf
+          weight: 500

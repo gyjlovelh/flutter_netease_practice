@@ -24,10 +24,11 @@ class _HomePlaylistState extends State<HomePlaylist> {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
               Text(
-                "Playlist",
+                "推荐歌单",
                 style: TextStyle(
-                  fontSize: 20.0,
-                  fontWeight: FontWeight.bold
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'monospace'
                 ),
               ),
               FlatButton(
@@ -69,7 +70,14 @@ class _HomePlaylistState extends State<HomePlaylist> {
                                     image: NetworkImage("${item['picUrl']}"),
                                     fit: BoxFit.cover
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0)
+                                  borderRadius: BorderRadius.circular(8.0),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Colors.black45,
+                                      blurRadius: 4.0,
+                                      offset: Offset(2.0, 2.0)
+                                    )
+                                  ]
                                 )
                               ),
                               Text(
@@ -77,7 +85,9 @@ class _HomePlaylistState extends State<HomePlaylist> {
                                 overflow: TextOverflow.ellipsis,
                                 maxLines: 2,
                                 style: TextStyle(
-                                  fontSize: 12.0
+                                  color: Colors.black87,
+                                  fontSize: 12.0,
+                                  fontWeight: FontWeight.w600
                                 ),
                               )
                             ],
