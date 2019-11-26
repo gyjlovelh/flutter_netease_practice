@@ -131,7 +131,7 @@ class _NeteaseAdvertisingState extends State<NeteaseAdvertising> with TickerProv
               color: Colors.deepOrangeAccent[200],
               shape:RoundedRectangleBorder(borderRadius: BorderRadius.circular(99.0)),
               onPressed: () {
-                Navigator.of(context).pushNamed('login');
+                Navigator.of(context).pushNamed('home');
               },
               textColor: Colors.white,
               child: Text('立即体验'),

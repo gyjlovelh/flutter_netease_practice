@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import 'pages/advertising/advertising.dart';
-import 'pages/login/login.dart';
+import 'pages/home/home.dart';
 
 void main() => runApp(NeteaseApp());
 
@@ -20,9 +20,13 @@ class _NeteaseAppState extends State<NeteaseApp> {
         debugShowCheckedModeBanner: false,
         debugShowMaterialGrid: false,
         initialRoute: "advertising",
+        theme: ThemeData(
+          primaryColor: Colors.orangeAccent,
+          textSelectionColor: Colors.orangeAccent
+        ),
         routes: {
           "advertising": (BuildContext context) => new NeteaseAdvertising(),
-          "login": (BuildContext context) => new NeteaseLogin()
+          "home": (BuildContext context) => new NeteaseHome()
         }
       ),
     );
