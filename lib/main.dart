@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'pages/advertising/advertising.dart';
 import 'pages/home/home.dart';
+import 'pages/playlist/playlist.dart';
 
 void main() => runApp(NeteaseApp());
 
@@ -21,12 +22,13 @@ class _NeteaseAppState extends State<NeteaseApp> {
         debugShowMaterialGrid: false,
         initialRoute: "advertising",
         theme: ThemeData(
-          primaryColor: Colors.orangeAccent,
-          textSelectionColor: Colors.orangeAccent
+          primaryColor: Colors.white,
+          // textSelectionColor: Colors.white
         ),
         routes: {
           "advertising": (BuildContext context) => new NeteaseAdvertising(),
-          "home": (BuildContext context) => new NeteaseHome()
+          "home": (BuildContext context) => new NeteaseHome(),
+          "playlist": (BuildContext context) => new NeteasePlaylist()
         }
       ),
     );

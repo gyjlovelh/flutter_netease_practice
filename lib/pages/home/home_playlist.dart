@@ -9,6 +9,9 @@ class HomePlaylist extends StatefulWidget {
 }
 
 class _HomePlaylistState extends State<HomePlaylist> {
+  // 水品边距
+  final double horizontal = 18.0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,7 +19,7 @@ class _HomePlaylistState extends State<HomePlaylist> {
         top: 18.0
       ),
       padding: EdgeInsets.symmetric(
-        horizontal: 18.0
+        horizontal: horizontal
       ),
       child: Column(
         children: <Widget>[
@@ -46,7 +49,7 @@ class _HomePlaylistState extends State<HomePlaylist> {
                   List songs = json.decode(snapshot.data.toString())['result'];
                   var wrapSpacing = 12.0;
                   var width = MediaQuery.of(context).size.width;
-                  var itemWidth = (width - 18 * 2 - wrapSpacing * 2) / 3;
+                  var itemWidth = ((width - horizontal * 2.0 - wrapSpacing * 2.0) / 3).floor().toDouble();
                   
                   return Wrap(
                     spacing: wrapSpacing,
@@ -54,6 +57,9 @@ class _HomePlaylistState extends State<HomePlaylist> {
                     children: songs.map((item) {
 
                       return GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pushNamed('playlist', arguments: "${item['id']}");
+                        },
                         child: Container(
                           height: itemWidth * 1.4,
                           width: itemWidth,
