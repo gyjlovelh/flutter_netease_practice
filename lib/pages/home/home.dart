@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:netease_demo/shared/player/player.dart';
 
 import 'home_playlist.dart';
 import 'home_song.dart';
@@ -68,7 +69,7 @@ class _NeteaseHomeState extends State<NeteaseHome> {
               right: 0,
               height: 50.0,
               child: Container(
-                color: Colors.black87,
+                child: new NeteasePlayer(),
               ),
             )
           ],

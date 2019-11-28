@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 import 'pages/advertising/advertising.dart';
 import 'pages/home/home.dart';
+import 'pages/play_detail/play_detail.dart';
 import 'pages/playlist/playlist.dart';
 
 void main() => runApp(NeteaseApp());
@@ -28,7 +29,8 @@ class _NeteaseAppState extends State<NeteaseApp> {
         routes: {
           "advertising": (BuildContext context) => new NeteaseAdvertising(),
           "home": (BuildContext context) => new NeteaseHome(),
-          "playlist": (BuildContext context) => new NeteasePlaylist()
+          "playlist": (BuildContext context) => new NeteasePlaylist(),
+          "play_detail": (BuildContext context) => new NeteasePlayDetail()
         }
       ),
     );

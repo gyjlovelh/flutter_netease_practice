@@ -41,6 +41,7 @@ flutter:
     - assets/image/second.png
     - assets/image/third.png
     - assets/image/login_cover.jpeg
+    - assets/image/song_cover_default.jpeg
 
   fonts:
     - family: iconfont
