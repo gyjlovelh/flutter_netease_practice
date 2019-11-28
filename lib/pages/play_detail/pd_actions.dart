@@ -12,30 +12,70 @@ class _PdActionsState extends State<PdActions> {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
-        actionItem('\u{E6b4}'),
-        actionItem('\u{E635}'),
-        actionItem('\u{E63d}', size: 48),
-        actionItem('\u{E63a}'),
-        actionItem('\u{E63c}'),
+        _ActionIconButton('\u{E6b4}', onPressed: () {}),
+        _ActionIconButton('\u{E635}', onPressed: () {}),
+        _ActionIconButton('\u{E63d}', size: 48, onPressed: () {}),
+        _ActionIconButton('\u{E63a}', onPressed: () {}),
+        _ActionIconButton('\u{E63c}', onPressed: () {}),
       ],
     );
   }
+}
 
-  Widget actionItem(String pointer, {
-    double size,
-    Color color
-  }) {
+class _ActionIconButton extends StatefulWidget {
+  final String pointer;
+  final double size;
+  final Color color;
+  final VoidCallback onPressed;
+
+  _ActionIconButton(this.pointer, {
+    this.size,
+    this.color,
+    @required this.onPressed
+  });
+
+  @override
+  _ActionIconButtonState createState() => _ActionIconButtonState();
+}
+
+class _ActionIconButtonState extends State<_ActionIconButton> {
+  bool isForce = false;
+
+  @override
+  Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
       onForcePressStart: (ForcePressDetails details) {
+        setState(() {
+          isForce = true;
+        });
+      },
+      onForcePressEnd: (ForcePressDetails details) {
 
+      },
+      onTap: () {
+       
+      },
+      onTapDown: (TapDownDetails details) {
+        setState(() {
+          isForce = true;
+        });
+      },
+      onTapUp: (TapUpDetails details) {
+        setState(() {
+          isForce = false;
+        });
+      },
+      onTapCancel: () {
+        setState(() {
+          isForce = false;
+        });
       },
       child: Container(
         child: Text(
-          "$pointer",
+          "${widget.pointer}",
           style: TextStyle(
-            color: color ?? Color.fromRGBO(40, 40, 40, 1),
-            fontSize: size ?? 32.0,
+            color: isForce ? Colors.redAccent : (widget.color ?? Color.fromRGBO(40, 40, 40, 1)),
+            fontSize: widget.size ?? 32.0,
             fontFamily: "iconfont",
             shadows: [
               BoxShadow(
@@ -47,20 +87,6 @@ class _PdActionsState extends State<PdActions> {
           ),
         )
       )
-    );
-  }
-}
-
-class _ActionIconButton extends StatefulWidget {
-  @override
-  _ActionIconButtonState createState() => _ActionIconButtonState();
-}
-
-class _ActionIconButtonState extends State<_ActionIconButton> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
     );
   }
 }

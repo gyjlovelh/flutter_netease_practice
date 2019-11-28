@@ -30,7 +30,7 @@ class _NeteasePlayerState extends State<NeteasePlayer> {
                 height: 50.0,
                 margin: EdgeInsets.only(left: 20.0),
                 child: Container(
-                  margin: EdgeInsets.all(4.0),
+                  margin: EdgeInsets.all(6.0),
                   decoration: BoxDecoration(
                     border: Border.all(
                       width: 0.5,
